@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Risk Assessment | Mental Health Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🧠 Mental Health Detection
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/assessment">
+                Risk Assessment
+            </a>
+
+           <a href="/dashboard">Dashboard</a>
+
+            <a href="/about">About</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Assessment Section -->
+
+    <section class="assessment-section">
+
+        <div class="assessment-header">
+
+            <p class="small-title">
+                STUDENT RISK ASSESSMENT
+            </p>
+
+            <h1>
+                Student Mental Health Assessment
+            </h1>
+
+            <p>
+                Enter the student's information below.
+                The information will later be processed by
+                our machine-learning model.
+            </p>
+
+        </div>
+
+
+        <!-- Form -->
+
+        <form class="assessment-form" action="/predict" method="POST">
+
+
+            <!-- Personal Information -->
+
+            <div class="form-section">
+
+                <h2>
+                    Personal Information
+                </h2>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            name="age"
+                            min="10"
+                            max="100"
+                            placeholder="Example: 20"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Gender
+                        </label>
+
+                        <select name="gender" required>
+
+                            <option value="">
+                                Select Gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            name="city"
+                            placeholder="Example: Chennai"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Degree
+                        </label>
+
+                        <input
+                            type="text"
+                            name="degree"
+                            placeholder="Example: B.Tech"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Academic Information -->
+
+            <div class="form-section">
+
+                <h2>
+                    Academic Information
+                </h2>
+
+
+                <div class="form-grid">
+                    <div class="form-group">
+    <label for="profession">Profession</label>
+
+    <select
+        id="profession"
+        name="profession"
+        required
+    >
+        <option value="">Select Profession</option>
+        <option value="Student">Student</option>
+    </select>
+</div>
+
+
+<div class="form-group">
+    <label for="work_pressure">Work Pressure</label>
+
+    <select
+        id="work_pressure"
+        name="work_pressure"
+        required
+    >
+        <option value="">Select Work Pressure</option>
+        <option value="1">1 - Very Low</option>
+        <option value="2">2 - Low</option>
+        <option value="3">3 - Moderate</option>
+        <option value="4">4 - High</option>
+        <option value="5">5 - Very High</option>
+    </select>
+</div>
+
+
+<div class="form-group">
+    <label for="job_satisfaction">Job Satisfaction</label>
+
+    <select
+        id="job_satisfaction"
+        name="job_satisfaction"
+        required
+    >
+        <option value="">Select Job Satisfaction</option>
+        <option value="1">1 - Very Low</option>
+        <option value="2">2 - Low</option>
+        <option value="3">3 - Moderate</option>
+        <option value="4">4 - High</option>
+        <option value="5">5 - Very High</option>
+    </select>
+</div>
+                    
+
+                    <div class="form-group">
+
+                        <label>
+                            Academic Pressure
+                        </label>
+
+                        <select
+                            name="academic_pressure"
+                            required>
+
+                            <option value="">
+                                Select Level
+                            </option>
+
+                            <option value="1">
+                                1 - Very Low
+                            </option>
+
+                            <option value="2">
+                                2 - Low
+                            </option>
+
+                            <option value="3">
+                                3 - Moderate
+                            </option>
+
+                            <option value="4">
+                                4 - High
+                            </option>
+
+                            <option value="5">
+                                5 - Very High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            CGPA
+                        </label>
+
+                        <input
+                            type="number"
+                            name="cgpa"
+                            min="0"
+                            max="10"
+                            step="0.01"
+                            placeholder="Example: 7.8"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Study Satisfaction
+                        </label>
+
+                        <select
+                            name="study_satisfaction"
+                            required>
+
+                            <option value="">
+                                Select Level
+                            </option>
+
+                            <option value="1">1 - Very Low</option>
+                            <option value="2">2 - Low</option>
+                            <option value="3">3 - Moderate</option>
+                            <option value="4">4 - High</option>
+                            <option value="5">5 - Very High</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Work / Study Hours
+                        </label>
+
+                        <input
+                            type="number"
+                            name="work_study_hours"
+                            min="0"
+                            max="24"
+                            placeholder="Example: 8"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Lifestyle -->
+
+            <div class="form-section">
+
+                <h2>
+                    Lifestyle Information
+                </h2>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Sleep Duration
+                        </label>
+
+                        <select
+                            name="sleep_duration"
+                            required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="Less than 5 hours">
+                                Less than 5 hours
+                            </option>
+
+                            <option value="5-6 hours">
+                                5-6 hours
+                            </option>
+
+                            <option value="7-8 hours">
+                                7-8 hours
+                            </option>
+
+                            <option value="More than 8 hours">
+                                More than 8 hours
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Dietary Habits
+                        </label>
+
+                        <select
+                            name="dietary_habits"
+                            required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="Healthy">
+                                Healthy
+                            </option>
+
+                            <option value="Moderate">
+                                Moderate
+                            </option>
+
+                            <option value="Unhealthy">
+                                Unhealthy
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Financial Stress
+                        </label>
+
+                        <select
+                            name="financial_stress"
+                            required>
+
+                            <option value="">
+                                Select Level
+                            </option>
+
+                            <option value="1">1 - Low</option>
+                            <option value="2">2 - Moderate</option>
+                            <option value="3">3 - High</option>
+                            <option value="4">4 - Very High</option>
+                            <option value="5">5 - Extreme</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Mental Health Information -->
+
+            <div class="form-section">
+
+                <h2>
+                    Mental Health Related Information
+                </h2>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Have you ever had suicidal thoughts?
+                        </label>
+
+                        <select
+                            name="suicidal_thoughts"
+                            required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Family History of Mental Illness
+                        </label>
+
+                        <select
+                            name="family_history"
+                            required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Submit -->
+
+            <div class="form-submit">
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    🔍 Check Risk
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+        <!-- Disclaimer -->
+
+        <div class="disclaimer">
+
+            <h3>
+                Important Notice
+            </h3>
+
+            <p>
+                This assessment is intended for educational
+                and early-screening purposes only. It does not
+                provide a medical diagnosis. For mental-health
+                concerns, please seek support from a qualified
+                professional.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 Mental Health Crisis Detection
+        </p>
+
+        <p>
+            Machine Learning Project
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

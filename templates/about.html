@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Learn More | Mental Health Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🧠 Mental Health Detection
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/assessment">Assessment</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/about">Learn More</a>
+        </div>
+
+    </nav>
+
+
+    <!-- About Hero -->
+
+    <section class="about-hero">
+
+        <div class="about-container">
+
+            <h1>About the Project</h1>
+
+            <p>
+                Mental Health Crisis Detection is a machine-learning
+                based student depression-risk screening system designed
+                to identify patterns associated with depression risk
+                using academic, lifestyle, financial and mental-health
+                related factors.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Project Overview -->
+
+    <section class="about-section">
+
+        <div class="about-container">
+
+            <div class="about-card">
+
+                <h2>🎯 Project Objective</h2>
+
+                <p>
+                    The objective of this project is to develop an
+                    early-screening system that uses machine learning
+                    to estimate depression risk among students.
+                </p>
+
+                <p>
+                    The system analyzes multiple student-related factors
+                    and provides a probability-based screening result.
+                    This can support awareness and encourage students
+                    to seek appropriate help when needed.
+                </p>
+
+            </div>
+
+
+            <!-- Problem -->
+
+            <div class="about-card">
+
+                <h2>⚠️ Problem Statement</h2>
+
+                <p>
+                    Students may experience academic pressure, work
+                    pressure, financial stress, sleep-related issues,
+                    dissatisfaction and other factors that can be
+                    associated with depression risk.
+                </p>
+
+                <p>
+                    Identifying patterns in these factors can help
+                    create an early screening mechanism that highlights
+                    potential risk for further attention.
+                </p>
+
+            </div>
+
+
+            <!-- Dataset -->
+
+            <div class="about-card">
+
+                <h2>📊 Dataset</h2>
+
+                <p>
+                    The project uses the
+                    <strong>Student Depression Dataset</strong>.
+                    The original dataset contains 27,901 records
+                    covering academic, lifestyle, financial and
+                    mental-health related attributes.
+                </p>
+
+                <div class="info-grid">
+
+                    <div class="info-item">
+                        <strong>Original Records</strong>
+                        <span>27,901</span>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Cleaned Records</strong>
+                        <span>27,868</span>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Target</strong>
+                        <span>Depression</span>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Problem Type</strong>
+                        <span>Binary Classification</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Features -->
+
+            <div class="about-card">
+
+                <h2>🔍 Factors Used</h2>
+
+                <p>
+                    The model uses a combination of academic,
+                    lifestyle, demographic and mental-health related
+                    factors.
+                </p>
+
+                <div class="feature-list">
+
+                    <span>Age</span>
+                    <span>Gender</span>
+                    <span>City</span>
+                    <span>Profession</span>
+                    <span>Degree</span>
+                    <span>Academic Pressure</span>
+                    <span>Work Pressure</span>
+                    <span>CGPA</span>
+                    <span>Study Satisfaction</span>
+                    <span>Job Satisfaction</span>
+                    <span>Sleep Duration</span>
+                    <span>Dietary Habits</span>
+                    <span>Work/Study Hours</span>
+                    <span>Financial Stress</span>
+                    <span>Suicidal Thoughts</span>
+                    <span>Family History</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- How it works -->
+
+            <div class="about-card">
+
+                <h2>⚙️ How the System Works</h2>
+
+                <div class="process-grid">
+
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Student Input</h3>
+                        <p>
+                            The student provides information through
+                            the assessment form.
+                        </p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Preprocessing</h3>
+                        <p>
+                            Input values are converted into the format
+                            expected by the trained model.
+                        </p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>ML Prediction</h3>
+                        <p>
+                            Logistic Regression estimates the
+                            probability of depression risk.
+                        </p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Risk Category</h3>
+                        <p>
+                            The probability is mapped to a prototype
+                            screening category.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Preprocessing -->
+
+            <div class="about-card">
+
+                <h2>🧹 Data Preprocessing</h2>
+
+                <p>
+                    Before training the machine-learning model,
+                    the dataset was cleaned and transformed.
+                </p>
+
+                <ul class="about-list">
+
+                    <li>
+                        The non-predictive <strong>id</strong> column
+                        was removed.
+                    </li>
+
+                    <li>
+                        Records containing <strong>?</strong> in
+                        Financial Stress were removed.
+                    </li>
+
+                    <li>
+                        Yes/No attributes were converted into binary
+                        numerical values.
+                    </li>
+
+                    <li>
+                        Sleep Duration and Dietary Habits were
+                        ordinally encoded.
+                    </li>
+
+                    <li>
+                        Categorical features were one-hot encoded
+                        during model training.
+                    </li>
+
+                    <li>
+                        Numerical features were standardized before
+                        classification.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Machine Learning -->
+
+            <div class="about-card">
+
+                <h2>🤖 Machine Learning Model</h2>
+
+                <p>
+                    The project uses
+                    <strong>Logistic Regression</strong> for binary
+                    classification.
+                </p>
+
+                <p>
+                    The model learns relationships between the input
+                    features and the target variable
+                    <strong>Depression</strong>.
+                </p>
+
+                <p>
+                    Instead of producing only a class label, the
+                    trained model estimates
+                    <strong>P(Depression = 1)</strong>.
+                    This probability is then used by the screening
+                    system to determine the prototype risk category.
+                </p>
+
+            </div>
+
+
+            <!-- Model Performance -->
+
+            <div class="about-card">
+
+                <h2>📈 Model Performance</h2>
+
+                <p>
+                    The Logistic Regression model was evaluated on
+                    the project's test set using standard classification
+                    metrics.
+                </p>
+
+                <div class="performance-grid">
+
+                    <div class="performance-item">
+                        <strong>85.58%</strong>
+                        <span>Accuracy</span>
+                    </div>
+
+                    <div class="performance-item">
+                        <strong>86.52%</strong>
+                        <span>Precision</span>
+                    </div>
+
+                    <div class="performance-item">
+                        <strong>89.28%</strong>
+                        <span>Recall</span>
+                    </div>
+
+                    <div class="performance-item">
+                        <strong>87.88%</strong>
+                        <span>F1 Score</span>
+                    </div>
+
+                </div>
+
+                <p class="small-note">
+                    These metrics are from the project's 80/20 stratified
+                    test split.
+                </p>
+
+            </div>
+
+
+            <!-- Risk Categories -->
+
+            <div class="about-card">
+
+                <h2>📌 Prototype Risk Categories</h2>
+
+                <p>
+                    The predicted probability is mapped into three
+                    prototype screening categories:
+                </p>
+
+                <div class="risk-categories">
+
+                    <div class="risk-category">
+                        <strong>Low Risk</strong>
+                        <p>0% – 30%</p>
+                    </div>
+
+                    <div class="risk-category">
+                        <strong>Moderate Risk</strong>
+                        <p>Above 30% – 70%</p>
+                    </div>
+
+                    <div class="risk-category">
+                        <strong>High Risk</strong>
+                        <p>Above 70%</p>
+                    </div>
+
+                </div>
+
+                <p class="small-note">
+                    These are prototype screening categories for this
+                    educational project and are not clinical thresholds.
+                </p>
+
+            </div>
+
+
+            <!-- Technology Stack -->
+
+            <div class="about-card">
+
+                <h2>💻 Technology Stack</h2>
+
+                <div class="tech-grid">
+
+                    <div class="tech-item">
+                        <strong>Python</strong>
+                        <span>Machine Learning</span>
+                    </div>
+
+                    <div class="tech-item">
+                        <strong>Scikit-learn</strong>
+                        <span>Model Training</span>
+                    </div>
+
+                    <div class="tech-item">
+                        <strong>Pandas</strong>
+                        <span>Data Processing</span>
+                    </div>
+
+                    <div class="tech-item">
+                        <strong>Flask</strong>
+                        <span>Web Application</span>
+                    </div>
+
+                    <div class="tech-item">
+                        <strong>HTML</strong>
+                        <span>Web Structure</span>
+                    </div>
+
+                    <div class="tech-item">
+                        <strong>CSS</strong>
+                        <span>User Interface</span>
+                    </div>
+
+                    <div class="tech-item">
+                        <strong>Joblib</strong>
+                        <span>Model Persistence</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Limitations -->
+
+            <div class="about-card">
+
+                <h2>⚠️ Limitations</h2>
+
+                <ul class="about-list">
+
+                    <li>
+                        The system is designed for educational and
+                        early-screening purposes.
+                    </li>
+
+                    <li>
+                        The prediction depends on the information
+                        entered by the student.
+                    </li>
+
+                    <li>
+                        The model's output should not be interpreted
+                        as a medical diagnosis.
+                    </li>
+
+                    <li>
+                        Prototype risk categories should not be treated
+                        as clinically validated thresholds.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Disclaimer -->
+
+            <div class="about-disclaimer">
+
+                <h2>🛡️ Important Disclaimer</h2>
+
+                <p>
+                    This project is an educational machine-learning
+                    prototype for early screening and awareness.
+                    It does not diagnose depression or replace a
+                    qualified mental-health professional.
+                </p>
+
+                <p>
+                    If someone is experiencing emotional distress,
+                    suicidal thoughts, or concerns about their mental
+                    health, they should seek appropriate professional
+                    or emergency support.
+                </p>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="about-buttons">
+
+                <a href="/assessment" class="btn-primary">
+                    Start Risk Assessment
+                </a>
+
+                <a href="/dashboard" class="btn-secondary">
+                    View Model Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 Mental Health Crisis Detection</p>
+
+        <p>Educational & Early-Screening Project</p>
+
+    </footer>
+
+</body>
+
+</html>

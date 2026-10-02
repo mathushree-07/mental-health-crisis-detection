@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assessment Result | Mental Health Crisis Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            Mental Health Crisis Detection
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/assessment">Assessment</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Result Section -->
+    <section class="result-section">
+
+        <div class="result-card">
+
+            <h1>Your Screening Result</h1>
+
+            <p class="result-description">
+                Based on the information provided, the machine learning
+                model estimated the following depression-risk probability.
+            </p>
+
+
+            <!-- Probability -->
+            <div class="probability-box">
+
+                <h2>Depression Probability</h2>
+
+                <div class="probability">
+                    {{ probability }}%
+                </div>
+
+            </div>
+
+
+            <!-- Risk Level -->
+            <div class="risk-box">
+
+                <h2>Risk Level</h2>
+
+                <div class="risk-level
+    {% if risk_level == 'Low Risk' %}
+        low-risk
+    {% elif risk_level == 'Moderate Risk' %}
+        moderate-risk
+    {% else %}
+        high-risk
+    {% endif %}
+">
+    {{ risk_level }}
+</div>
+
+            </div>
+<div class="result-notice">
+
+    <strong>What does this result mean?</strong>
+
+    <p>
+        The percentage shown above represents the probability
+        estimated by the machine learning model based on the
+        information provided in the assessment.
+    </p>
+
+    <p>
+        The risk category is a prototype screening category
+        created for this educational project. It should not be
+        interpreted as a clinical diagnosis.
+    </p>
+
+</div>
+
+            <!-- Important Notice -->
+            <div class="result-notice">
+
+                <strong>Important:</strong>
+
+                <p>
+                    This result is intended only for educational and
+                    early-screening purposes. It is not a medical diagnosis.
+                </p>
+
+                <p>
+                    If you are experiencing emotional distress or concerns
+                    about your mental health, consider speaking with a
+                    qualified mental-health professional or an appropriate
+                    support service.
+                </p>
+
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="result-buttons">
+
+                <a href="/assessment" class="btn-primary">
+                    Take Assessment Again
+                </a>
+
+                <a href="/" class="btn-secondary">
+                    Back to Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Mental Health Crisis Detection
+        </p>
+
+        <p>
+            Educational & Early-Screening Project
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

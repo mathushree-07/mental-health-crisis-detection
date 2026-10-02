@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Mental Health Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🧠 Mental Health Detection
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/assessment">Assessment</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/about">Learn More</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Dashboard -->
+
+    <section class="dashboard-section">
+
+        <div class="dashboard-container">
+
+            <h1>Model Performance Dashboard</h1>
+
+            <p class="dashboard-description">
+                This dashboard presents the performance of the
+                Logistic Regression model used for student
+                depression-risk screening.
+            </p>
+
+
+            <!-- Dataset Information -->
+
+            <div class="dashboard-card">
+
+                <h2>Dataset Information</h2>
+
+                <div class="stats-grid">
+
+                    <div class="stat-box">
+                        <h3>27,868</h3>
+                        <p>Cleaned Records</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>16</h3>
+                        <p>Input Features</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>80 / 20</h3>
+                        <p>Train / Test Split</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>Logistic Regression</h3>
+                        <p>ML Model</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Performance -->
+
+            <div class="dashboard-card">
+
+                <h2>Model Performance</h2>
+
+                <div class="metrics-grid">
+
+                    <div class="metric-box">
+                        <h3>85.58%</h3>
+                        <p>Accuracy</p>
+                    </div>
+
+                    <div class="metric-box">
+                        <h3>86.52%</h3>
+                        <p>Precision</p>
+                    </div>
+
+                    <div class="metric-box">
+                        <h3>89.28%</h3>
+                        <p>Recall</p>
+                    </div>
+
+                    <div class="metric-box">
+                        <h3>87.88%</h3>
+                        <p>F1 Score</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Model Description -->
+
+            <div class="dashboard-card">
+
+                <h2>About the Model</h2>
+
+                <p>
+                    The system uses Logistic Regression to perform
+                    binary classification. The model estimates the
+                    probability of depression risk based on the
+                    information entered by the student.
+                </p>
+
+                <p>
+                    The estimated probability is then used to place
+                    the result into one of three prototype screening
+                    categories: Low Risk, Moderate Risk, or High Risk.
+                </p>
+
+            </div>
+            <!-- Model Workflow -->
+
+<div class="dashboard-card">
+
+    <h2>Machine Learning Workflow</h2>
+
+    <div class="workflow-grid">
+
+        <div class="workflow-step">
+            <div class="workflow-number">1</div>
+            <h3>Dataset</h3>
+            <p>
+                Student Depression Dataset containing
+                academic, lifestyle and mental-health related
+                attributes.
+            </p>
+        </div>
+
+        <div class="workflow-step">
+            <div class="workflow-number">2</div>
+            <h3>Preprocessing</h3>
+            <p>
+                Data cleaning, categorical encoding,
+                numerical conversion and feature scaling.
+            </p>
+        </div>
+
+        <div class="workflow-step">
+            <div class="workflow-number">3</div>
+            <h3>Training</h3>
+            <p>
+                Logistic Regression is trained using an
+                80/20 stratified train-test split.
+            </p>
+        </div>
+
+        <div class="workflow-step">
+            <div class="workflow-number">4</div>
+            <h3>Prediction</h3>
+            <p>
+                The model estimates the probability of
+                depression risk for new student input.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+<section class="dashboard-section">
+
+    <h2>Exploratory Data Analysis</h2>
+
+    <p class="section-description">
+        The following visualizations show important patterns observed
+        in the cleaned Student Depression Dataset.
+    </p>
+
+    <div class="charts-grid">
+
+        <div class="chart-card">
+            <h3>Depression Distribution</h3>
+            <img src="{{ url_for('static', filename='charts/depression_distribution.png') }}"
+                 alt="Depression Distribution">
+        </div>
+
+        <div class="chart-card">
+            <h3>Academic Pressure vs Depression</h3>
+            <img src="{{ url_for('static', filename='charts/academic_pressure.png') }}"
+                 alt="Academic Pressure vs Depression">
+        </div>
+
+        <div class="chart-card">
+            <h3>Suicidal Thoughts vs Depression</h3>
+            <img src="{{ url_for('static', filename='charts/suicidal_thoughts.png') }}"
+                 alt="Suicidal Thoughts vs Depression">
+        </div>
+
+        <div class="chart-card">
+            <h3>Sleep Duration vs Depression</h3>
+            <img src="{{ url_for('static', filename='charts/sleep_duration.png') }}"
+                 alt="Sleep Duration vs Depression">
+        </div>
+
+    </div>
+
+</section>
+
+
+            <!-- Disclaimer -->
+
+            <div class="dashboard-warning">
+
+                <strong>Important:</strong>
+
+                <p>
+                    These results are from the project's machine
+                    learning test set. The system is intended for
+                    educational and early-screening purposes only
+                    and should not be considered a medical diagnosis.
+                </p>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="dashboard-buttons">
+
+                <a href="/assessment" class="btn-primary">
+                    Start Assessment
+                </a>
+
+                <a href="/" class="btn-secondary">
+                    Back to Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 Mental Health Crisis Detection</p>
+
+        <p>Educational & Early-Screening Project</p>
+
+    </footer>
+
+</body>
+
+</html>
